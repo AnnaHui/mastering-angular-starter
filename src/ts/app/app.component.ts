@@ -2,10 +2,21 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: "main",
-    template: "<span>{{message}}</span>",
+    template: require("./app.component.html"),
+    styles: [require("./app.component.scss")]
 })
 export class AppComponent {
 
-    public message: string = "Hello World!";
+    public header: string = "color tool!";
+
+    public colors: string[] = [
+        'white', 'green', 'red', 'orange', 'yellow'
+    ]
+
+    public newColor: string = "";
+    public addColor() {
+        this.colors.push(this.newColor);
+        this.newColor = "";
+    }
 
 }
